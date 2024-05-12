@@ -1,13 +1,3 @@
-//-------------------------------------------------------------------------
-//      controller.sv                                                    --
-//      Created by Yuhao Ge & Haina Lou                                  --
-//      Fall 2021                                                        --
-//                                                                       --
-//      This module controls the state of the game                       --
-//      UIUC ECE Department                                              --
-//-------------------------------------------------------------------------
-
-
 
 
 module controller(

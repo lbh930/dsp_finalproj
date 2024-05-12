@@ -1,3 +1,5 @@
+
+
 //-------------------------------------------------------------------------
 //      lab8.sv                                                          --
 //      Christine Chen                                                   --
@@ -91,7 +93,7 @@ module lab8( input               CLOCK_50,
     always_ff @ (posedge Clk) begin
         Reset_h <= ~(KEY[0]);        // The push buttons are active low
 		  music <= ~(KEY[1]); 
-		  if ( (keycode[7:0] == 8'd82) || (keycode[15:8] == 8'd82))
+		  /*if ( (keycode[7:0] == 8'd82) || (keycode[15:8] == 8'd82))
 		  begin
 			  shoot <= 1; 
 			  direction = 3'd2;
@@ -110,7 +112,7 @@ module lab8( input               CLOCK_50,
 		  begin
 			  shoot <= 0;
 			  direction = 3'd2;
-		  end
+		  end*/
 		  
     end
     

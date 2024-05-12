@@ -77,7 +77,7 @@ begin
         begin
             restart = 1'b1;
             show = 3'd1;
-            if ((keycode & 16'hff) == 16'd40) //press enter then start
+            if (1'd1 == 1'd1) //press enter then start
                 next_state = play;  
         end          
         play:

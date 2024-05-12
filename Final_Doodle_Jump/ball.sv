@@ -31,7 +31,7 @@ module  ball ( input         Clk,                // 50 MHz clock
 					output logic [9:0] distance
               );
     
-    parameter [9:0] Ball_X_Center = 10'd320;  // Center position on the X axis
+    parameter [9:0] Ball_X_Center = 10'd210;  // Center position on the X axis
     parameter [9:0] Ball_Y_Center = 10'd240;  // Center position on the Y axis
     parameter [9:0] Ball_X_Min = 10'd160;       // Leftmost point on the X axis
     parameter [9:0] Ball_X_Max = 10'd479;     // Rightmost point on the X axis
@@ -81,7 +81,7 @@ module  ball ( input         Clk,                // 50 MHz clock
         begin
             Ball_X_Pos <= Ball_X_Pos_in;
             Ball_Y_Pos <= Ball_Y_Pos_in;
-            Ball_X_Motion <= Ball_X_Motion_in;
+            /*Ball_X_Motion <= Ball_X_Motion_in;
             Ball_Y_Motion <= Ball_Y_Motion_in;
 				if (frame_clk_rising_edge)
 				begin
@@ -122,7 +122,7 @@ module  ball ( input         Clk,                // 50 MHz clock
 							Ball_Y_Step <= Ball_Y_Step + 1'b1;
 							counter <= 1'b0;
 						end
-				end
+				end*/
 				
         end
     end
@@ -166,7 +166,7 @@ module  ball ( input         Clk,                // 50 MHz clock
     
     // Compute whether the pixel corresponds to ball or background
     /* Since the multiplicants are required to be signed, we have to first cast them
-       from logic to int (signed by default) before they are multiplied. */
+       from logic to  (signed by default) before they are multiplied. */
     int DistX1, DistY1, DistX2, DistY2, Size;
     assign DistX1 = DrawX - Ball_X_Pos;
     assign DistY1 = DrawY - Ball_Y_Pos;

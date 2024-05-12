@@ -46,7 +46,7 @@ module monsters ( input Clk, Reset,
 		  gene_rising_edge <= (gene == 1'b1) && (gene_delayed == 1'b0);
     end
 	 
-	 
+	 /*
 	 // The movement of the monster
     always_ff @ (posedge Clk) 
 	 begin
@@ -76,23 +76,25 @@ module monsters ( input Clk, Reset,
             3'd6 : speedy = 10'd0;
             3'd7 : speedy = 10'd1;
         endcase
-    end
+    end*/
 	 
 	 
     always_ff @ (posedge Clk) 
 	 begin
 		if(Reset)
 			begin						
-				active <= 1'b0;
+				active <= 1'b1;
+				monster_x <= 10'd330;		
+				monster_y <= 10'd240;
 			end
 		else if (gene_rising_edge == 1'b1)
 			begin
 				active <= 1'b1;
-				monster_x <= 10'd200;		
-				monster_y <= 10'b0;
+				monster_x <= 10'd420;		
+				monster_y <= 10'd240;
 			end
 		else
-			begin
+			begin/*
 			if (active)
 				begin
 					if (frame_clk_rising_edge)
@@ -108,7 +110,7 @@ module monsters ( input Clk, Reset,
 			if (hit | beat_mons)								// remove the monster when it is hit by a bullet
 				begin
 					active <= 1'b0;										
-				end
+				end*/
 			end
     end
 	 
